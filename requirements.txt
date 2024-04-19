@@ -5,7 +5,6 @@ bcrypt
 blinker
 certifi
 chardet
-chrome-gnome-shell
 click
 colorama
 command-not-found
