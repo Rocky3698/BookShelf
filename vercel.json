@@ -1,7 +1,6 @@
 {
     "builds": [{
-        "src": "Bookshelf/wsgi.py",
-        "use": "@vercel/python"
+        "src": "Bookshelf/wsgi.py"
     }],
     "routes": [
         {
