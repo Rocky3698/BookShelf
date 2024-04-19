@@ -22,7 +22,6 @@ duplicity
 fasteners
 filelock
 future
-gyp
 httplib2
 hyperlink
 idna
