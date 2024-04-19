@@ -34,6 +34,7 @@ lazr.restfulclient
 lazr.uri
 lockfile
 louis
+libgirepository1.0-dev
 macaroonbakery
 Mako
 MarkupSafe
