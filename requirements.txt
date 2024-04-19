@@ -7,7 +7,6 @@ certifi
 chardet
 click
 colorama
-command-not-found
 constantly
 crispy-bootstrap5
 cryptography
