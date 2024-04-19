@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/style1.css' %}">
+{% endblock %}
+{% block content %}
+<section class="section1 d-flex align-items-center justify-content-center m-auto mt-md-5 py-md-5">
+
+    <div class="row align-items-center justify-content-between mt-md-5 ">
+
+        <div class="col-md-7">
+            <h1 class=" text-info heading">Enter the World of <span class="text-primary">Bookshelf Library</span></h1>
+            <h1 class="text-secondary">Where Every Page Holds a New Adventure</h1>
+            <p class="lead fw-medium ">Bookshelf Library invites you to immerse yourself in a realm of boundless <code>imagination</code>  and <code>discovery</code>. Our curated selection of books offers something for every reader, from gripping tales to enlightening non-fiction. Step into our sanctuary of stories and embark on a journey that will ignite your imagination and expand your horizons. Welcome to the gateway of endless possibilities.</p>
+            <a href="#books"><button class="btn btn-lg btn-warning fs-2 fw-medium">Find Book</button></a>
+        </div>
+        <img src="{% static 'images/Library-rafiki.png' %}" alt="Img" class="col-md-5 mt-5 mt-md-0">
+
+    </div>
+</section>
+<section id="books">
+    <div class="container ">
+        <div class="row">
+            <h4>Categories</h4>
+            <hr>
+            <div class="col">
+                <div class="scroll-box">
+                    <a href="{% url 'home_slug' 'all' %}"
+                        class="nav-link d-inline-block text-center bg-light p-3 rounded-4 mr-4"
+                        style="width: 200px;">All</a>
+                    {% for category in categories %}
+                    <a href="{% url 'home_slug' category.slug %}"
+                        class="nav-link d-inline-block text-center bg-light p-3 rounded-4 mr-4"
+                        style="width: 200px;">{{category.name}}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</section>
+
+<section class="section1 m-auto pt-5 mt-5">
+    <div class="text-center">
+        <h1 class="mt-3">Available Books : {{books|length}}</h1>
+        <div class="row align-items-center justify-content-around mt-md-5 mt-3 pt-md-3 pt-0">
+            {% for book in books %}
+            <div class="card col-sm-6 col-lg-4 col-xl-3 border-0 mb-5">
+                <img src="{{book.image.url}}" class="card-img-top" alt="book img">
+                <div class="card-body p-0 text-start mt-4">
+                    <p class="m-0 lead fw-bold text-wrap">{{book.title}} </p>
+                    <p class="m-0 lead fw-bold">Author: {{book.author}}</p>
+                    <p class="m-0 lead fw-bold text-wrap">Publication Year: {{book.publication_year}}</p>
+                    <p class="m-0 lead">Borrow Price: ${{book.price}}</p>
+                    {% if book.copies > 0 %}
+                    <p class=" m-0 text-success">Product In Stock</p>
+                    {% else %}
+                    <p class="m-0 text-danger">Out Of Stock</p>
+                    {% endif %}
+                    {% if request.user.is_authenticated and book.copies > 0 %}
+                    <a href="{% url 'borrow_book' book.slug %}" class="my-2 me-3 btn btn-small btn-warning">Borrow Now</a>
+                    {% endif %}
+                    <a href="{% url 'book_details' book.slug %}" class=" my-2 btn btn-small btn-secondary">View details</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,45 @@
+.book {
+    height: 100%;
+    width: 60%;
+    margin-left: 100px;
+}
+
+.bookdiv {
+    width: 85%;
+    margin: auto;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.sdow {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.scroll-box {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+/* Style the scrollbar track */
+.scroll-box::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Light gray */
+}
+
+/* Style the scrollbar handle */
+.scroll-box::-webkit-scrollbar-thumb {
+    background-color: #9e9c9c;
+    /* Gray */
+    border-radius: 10px;
+    /* Round */
+}
+
+/* Hide scrollbar when not hovering over scroll area */
+.scroll-box::-webkit-scrollbar {
+    height: 10px;
+    /* Height of the scrollbar (for horizontal scrollbar) */
+}

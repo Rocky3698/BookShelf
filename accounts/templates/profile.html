@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<section style="width: 92%; margin: auto;">
+    <div class="d-flex align-content-center">
+        <div class="col-6 mt-5 pt-5">
+            <div class="w-75 m-auto ">
+                <h1>Borrow Records</h1>
+                <table class="table mt-3">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">ID</th>
+                            <th scope="col">Book</th>
+                            <th scope="col">Paid Amount</th>
+                            <th scope="col">Balance After Borrow</th>
+                            <th scope="col">Borrow Date</th>
+                            {% if request.user.is_authenticated %}
+                            <th scope="col">Return Date</th>
+                            {% endif %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for borrow in borrows %}
+                        <tr class="text-center">
+                            <td>{{borrow.id}}</td>
+                            <td>{{borrow.book.title}}</td>
+                            <td>{{borrow.paid_amount}}</td>
+                            <td>{{borrow.balance_after_borrow}}</td>
+                            <td>{{borrow.borrow_date}}</td>
+                            {% if borrow.return_date is none %}
+                            <td>
+                                <a href="{% url 'return' borrow.id %}" class="btn btn-success">Return</a>
+                            </td>
+                            {% else %}
+                            <td>
+                                {{borrow.return_date}}
+                            </td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="mt-5 pt-5">
+                <div class="row">
+                    <div class="col-12 col-sm-8 col-md-6 m-auto">
+                        <div class="card border-0 shadow">
+                            <div class="card-body text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                                    class=" bi bi-person-circle my-2" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                    <path fill-rule="evenodd"
+                                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                </svg>
+                                <h4 class="my-2">Profile</h4>
+                                <form action="" class="text-start mt-3" method="post">
+                                    {% csrf_token %}
+                                    {{form | crispy}}
+                                    <div class="text-center mt-3 d-grid gap-2">
+                                        <button class="btn btn-primary mb-2">Save</button>
+                                        <a href="{% url 'pass_change' %}" class="nav-link">Change Password ?</a>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
+
+

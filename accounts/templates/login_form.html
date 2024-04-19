@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<section>
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-12 col-sm-8 col-md-6 m-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                            class=" bi bi-person-circle my-2" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                        </svg>
+                        <h4 class="my-2">Login</h4>
+                        <form action="" class="text-start mt-3" method="post">
+                            {% csrf_token %}
+                            {{form | crispy}}
+                            <div class="text-center mt-3 d-grid gap-2">
+                                <button class="btn btn-primary mb-2">Login</button>
+                                <a href="{% url 'user_signup' %}" class="nav-link">Forget password ?</a>
+                            </div>
+                            <hr>
+                            <div class=" text-center">
+                                <a href="{% url 'user_signup' %}" class="btn btn-success my-2">Create New Account</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

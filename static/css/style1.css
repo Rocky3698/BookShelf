@@ -1,0 +1,42 @@
+.heading {
+    font-size: 6em;
+}
+
+.section1 {
+    margin-bottom: 10em;
+    width: 85%;
+}
+
+.scroll-box {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+/* Style the scrollbar track */
+.scroll-box::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Light gray */
+}
+
+/* Style the scrollbar handle */
+.scroll-box::-webkit-scrollbar-thumb {
+    background-color: #9e9c9c;
+    /* Gray */
+    border-radius: 10px;
+    /* Round */
+}
+
+/* Hide scrollbar when not hovering over scroll area */
+.scroll-box::-webkit-scrollbar {
+    height: 10px;
+    /* Height of the scrollbar (for horizontal scrollbar) */
+}
+
+.card-img-top{
+    height: 280px;
+    width:100%;
+    object-fit: cover;
+    object-position: center;
+    
+}
