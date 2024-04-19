@@ -32,7 +32,6 @@ keyring
 launchpadlib
 lazr.restfulclient
 lazr.uri
-libtorrent
 lockfile
 louis
 macaroonbakery
