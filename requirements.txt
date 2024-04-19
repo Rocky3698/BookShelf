@@ -3,7 +3,6 @@ attrs
 Automat
 bcrypt
 blinker
-Brlapi
 certifi
 chardet
 chrome-gnome-shell
