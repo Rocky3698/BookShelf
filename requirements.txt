@@ -22,7 +22,6 @@ duplicity
 fasteners
 filelock
 future
-gobject-introspection
 httplib2
 hyperlink
 idna
