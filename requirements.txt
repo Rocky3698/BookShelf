@@ -29,7 +29,6 @@ importlib-metadata
 incremental
 jeepney
 keyring
-language-selector
 launchpadlib
 lazr.restfulclient
 lazr.uri
