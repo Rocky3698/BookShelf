@@ -10,7 +10,6 @@ colorama
 constantly
 crispy-bootstrap5
 cryptography
-dbus-python
 defer
 deluge
 distlib
