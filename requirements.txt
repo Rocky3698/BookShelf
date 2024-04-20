@@ -45,7 +45,6 @@ pyasn1
 pyasn1-modules
 PyAutoGUI
 pycairo
-pycups
 PyGetWindow
 Pygments
 PyHamcrest
