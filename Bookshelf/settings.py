@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-@v&-)4q1bxta7cb+(&&kgk7phuv+d4+3uk6v+%9dsj&fa#&!al
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+CSRF_TRUSTED_ORIGINS = ['https://bookshelf-dnaw.onrender.com']
 
 # Application definition
 
