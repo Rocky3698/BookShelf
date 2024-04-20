@@ -59,7 +59,6 @@ pyperclip
 PyRect
 pyRFC3339
 PyScreeze
-python-apt
 python-dateutil
 python-debian
 python3-xlib
