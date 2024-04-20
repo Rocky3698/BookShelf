@@ -48,7 +48,6 @@ pycairo
 pycups
 PyGetWindow
 Pygments
-PyGObject
 PyHamcrest
 PyJWT
 pymacaroons
@@ -81,13 +80,3 @@ urllib3
 virtualenv
 zipp
 zope.interface
-
-
-
-
-
-
-
-
-
-
